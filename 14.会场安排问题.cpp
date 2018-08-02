@@ -15,7 +15,7 @@ int cmp(activition a1,activition a2){
 }
 
 int main(int argc, char** argv) {
-	int m,n,i,j,t;
+	int c,m,n,i,j,k,t;
 	cin>>m;
 	while(m--){
 		cin>>n;
@@ -24,13 +24,20 @@ int main(int argc, char** argv) {
 			cin>>a[i].Begin>>a[i].End;
 			i++;
 		}
-		t=0;
-		for(j=1;j<i;j++){
-			t++;
-			while(a[i].Begin<=a[i-1].End&&i<j){
-				i++;
+		t=1;
+		c=0;
+		k=1;
+		
+		while(k<i){
+			while(a[k].Begin<=a[c].End&&k<i){
+				k++;
+			}
+			if(a[k].Begin>a[c].End){
+				c=k;
+				t++;
 			}
 		}
+		
 		cout<<t<<endl;
 	}
 	return 0;
