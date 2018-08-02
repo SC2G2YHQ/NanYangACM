@@ -24,6 +24,7 @@ int main(int argc, char** argv) {
 			cin>>a[i].Begin>>a[i].End;
 			i++;
 		}
+		sort(a,a+i,cmp);
 		t=1;
 		c=0;
 		k=1;
